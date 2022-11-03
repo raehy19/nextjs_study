@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 const Cats = ({ catList }: any) => {
+  console.log(catList);
   return (
     <div>
       <div
@@ -9,7 +12,9 @@ const Cats = ({ catList }: any) => {
         }}
       >
         {catList.map((item: any) => (
-          <img src={item.url} width={500} />
+          <Link href={`details/${item.id}`}>
+            <img src={item.url} width={500} />
+          </Link>
         ))}
       </div>
     </div>
