@@ -6,7 +6,8 @@ const Details = () => {
   const router = useRouter();
   console.log(router);
   console.log(router.query);
-  const id = router.query.id;
+  let id = router.query.id;
+  let a = 1;
 
   const API_URL = `https://api.thecatapi.com/v1/images/${id}`;
   console.log("id : ", id);
@@ -14,16 +15,18 @@ const Details = () => {
   const [imgUrl, setImgUrl] = useState("");
 
   useEffect(() => {
-    console.log("wqd", id);
+    console.log("id :", id);
     axios
       .get(API_URL)
       .then((res) => {
-        console.log(res);
+        console.log("res : ", res);
         setImgUrl(res.data.url);
       })
       .catch((e) => {
-        console.log(e);
+        console.log("error :", e);
       });
+    a += 1;
+    console.log("a: ", a);
   }, [id]);
 
   return (

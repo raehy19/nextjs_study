@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import axios, { Axios } from "axios";
 import Cats from "../src/components/cats";
+import Test from "../src/components/test";
 
 const Home: NextPage = () => {
   const [catList, setcatList] = useState([]);
@@ -14,15 +15,17 @@ const Home: NextPage = () => {
     "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
   useEffect(() => {
     axios.get(API_URL).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setcatList(res.data);
     });
   }, []);
+
   return (
     <div>
       <Head>
         <title>home page</title>
       </Head>
+      <Test></Test>
       <Cats catList={catList}></Cats>
     </div>
   );
