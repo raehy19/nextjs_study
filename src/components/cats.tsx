@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const Cats = ({ catList }: any) => {
   console.log(catList);
@@ -6,9 +6,9 @@ const Cats = ({ catList }: any) => {
     <div>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
         {catList.map((item: any) => (
