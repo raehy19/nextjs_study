@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios, { Axios } from 'axios';
 import Cats from '../src/components/cats';
 import Test from '../src/components/test';
+import Login from '../src/components/kakaoLogin';
 
 const Home: NextPage = () => {
   const [catList, setcatList] = useState([]);
@@ -25,7 +26,8 @@ const Home: NextPage = () => {
       <Head>
         <title>home page</title>
       </Head>
-      <Test></Test>
+      <Login></Login>
+      {/*<Test></Test>*/}
       <Cats catList={catList}></Cats>
     </div>
   );
